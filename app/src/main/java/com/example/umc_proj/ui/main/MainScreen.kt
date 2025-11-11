@@ -17,6 +17,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.example.umc_proj.ui.component.BottomNavBar
+import com.example.umc_proj.ui.home.HomeScreen
 import kotlinx.serialization.Serializable
 
 @Composable
@@ -42,7 +43,7 @@ fun MainScreen(
     ) {
         // 제네릭으로 각 컴포저블의 경로를 나타냄
         composable<Destination.Home> {
-            Text("홈")
+            HomeScreen()
         }
 
         composable<Destination.Buy> {
@@ -74,6 +75,7 @@ fun MainScreen(
                 navController.navigate(it) {
                     launchSingleTop = true
                     restoreState = true
+                    // navigation 스택이 안쌓이도록
                     popUpTo(navController.graph.startDestinationId) {
                         saveState = true
                     }
