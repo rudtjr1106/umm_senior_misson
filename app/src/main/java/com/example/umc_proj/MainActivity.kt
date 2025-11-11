@@ -17,7 +17,6 @@ import com.example.umc_proj.ui.theme.UMC_projTheme
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         setContent {
             MainScreen()
         }

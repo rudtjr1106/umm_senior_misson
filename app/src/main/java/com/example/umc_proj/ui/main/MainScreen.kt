@@ -16,6 +16,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
+import com.example.umc_proj.ui.buy.BuyScreen
 import com.example.umc_proj.ui.component.BottomNavBar
 import com.example.umc_proj.ui.home.HomeScreen
 import kotlinx.serialization.Serializable
@@ -47,7 +48,7 @@ fun MainScreen(
         }
 
         composable<Destination.Buy> {
-            Text("구매하다")
+            BuyScreen()
         }
 
         composable<Destination.Wish> {
