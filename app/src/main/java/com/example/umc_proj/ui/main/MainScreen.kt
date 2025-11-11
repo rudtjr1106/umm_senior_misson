@@ -19,6 +19,7 @@ import androidx.navigation.compose.rememberNavController
 import com.example.umc_proj.ui.buy.BuyScreen
 import com.example.umc_proj.ui.component.BottomNavBar
 import com.example.umc_proj.ui.home.HomeScreen
+import com.example.umc_proj.ui.shop.ShopScreen
 import com.example.umc_proj.ui.wish.WishScreen
 import kotlinx.serialization.Serializable
 
@@ -57,7 +58,11 @@ fun MainScreen(
         }
 
         composable<Destination.Shop> {
-            Text("장바구니")
+            ShopScreen(
+                onClickBuy = {
+                    navController.navigate(Destination.Buy)
+                }
+            )
         }
 
         composable<Destination.Profile> {
